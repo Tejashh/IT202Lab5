@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <div id="template" class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Card Tow Vehicle Search</h5>
+    <form id="target" action="/action_page.php">
+      Plate Number: <input id="plate" name="plate" type="text"><br>
+      2-letter state: <input id="state" name="state" type="text"><br>
+        
+    <button type="button">Click me</button>
+    </form>
+    
+  </div>
+</div>
+    
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+$.ajax({
+    url: "https://data.cityofchicago.org/resource/rp42-fxjt.json",
+    type: "GET",
+    data: {
+      "$lipmit" : 5000,
+      "$$app_token" : "iwIHdbck8C7L3TsUuriF2PgWe"
+    }
+}).done(function(data) {
+  alert("Retrieved " + data.length + " records from the dataset!");
+  console.log(data);
+  $.each(data, function(i,v) {           
+                  
+                 
+
+  });
+});
+  </script>
+
+</body>
+</html>
